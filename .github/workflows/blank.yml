@@ -29,7 +29,7 @@ jobs:
           to: 714820764
           token: 6960121384:AAG_B0Q2sxwL386QIisQofnq0Hei_PTYzJE
       - name: send default message
-        if: failure
+        if: failure()
         uses: appleboy/telegram-action@master
         with:
           message: "Сделано no успешно"
