@@ -18,4 +18,4 @@ jobs:
           password: ${{ secrets.GITHUB_TOKEN }}
       - run: docker build -t ghcr.io/andreq124/task061223:1.0 .
       - run: docker push ghcr.io/andreq124/task061223:1.0
-      - run: ssh -o "StrictHostKeyChecking no" 'andreq124-task061223-494krzv0vol#pfTP3JWzUdOT8vf.B8h9TiQE_LUUqCV.@andreq124-task061223-494krzv0vol.ssh.ws-eu106.gitpod.io' "CD/workspace/task061223 && docker compose pull && docker compose up -d"
+      - run: ssh -o "StrictHostKeyChecking no" 'andreq124-task061223-494krzv0vol#pfTP3JWzUdOT8vf.B8h9TiQE_LUUqCV.@andreq124-task061223-494krzv0vol.ssh.ws-eu106.gitpod.io' "cd /workspace/task061223 && docker compose pull && docker compose up -d"
