@@ -13,6 +13,6 @@ WORKDIR /app
 COPY package.json .
 RUN npm install
 
-COPY index.js .
+COPY node.js .
 
-ENTRYPOINT ["node","index.js"]
+ENTRYPOINT ["node","node.js"]
