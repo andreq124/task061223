@@ -21,3 +21,18 @@ jobs:
       - run: docker build -t ghcr.io/andreq124/task061223-2:1.0 .
       - run: docker push ghcr.io/andreq124/task061223-2:1.0
       - run: ssh -o "StrictHostKeyChecking no" 'andreq124-task061223-494krzv0vol#pfTP3JWzUdOT8vf.B8h9TiQE_LUUqCV.@andreq124-task061223-494krzv0vol.ssh.ws-eu106.gitpod.io' "cd /workspace/task061223 && docker compose pull && docker compose up -d"
+      - name: send default message
+        if: success()
+        uses: appleboy/telegram-action@master
+        with:
+          message: "Сделано успешно"
+          to: 714820764
+          token: 6960121384:AAG_B0Q2sxwL386QIisQofnq0Hei_PTYzJE
+      - name: send default message
+        if: unsuccessfully()
+        uses: appleboy/telegram-action@master
+        with:
+          message: "Сделано no успешно"
+          to: 714820764
+          token: 6960121384:AAG_B0Q2sxwL386QIisQofnq0Hei_PTYzJE
+        
